@@ -1,8 +1,6 @@
   # Digital_Defense
 Proyecto de ML y DL sobre detección de ataques malware
 ![ml](https://github.com/vicevil77/Digital_Defense/assets/120662253/609c4974-5640-4ca6-b8df-eb1ad0b7f92c)
-Introducción al proyecto de Machine Learning/Deep Learning para la detección de ataques de malware
- ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/d6734122-2c90-4d5f-bf06-218b4a56a41f)
 Objetivo:
 El objetivo de este proyecto es desarrollar un modelo de Machine Learning/Deep Learning (ML/DL) para conseguir el mejor modelo para poder predecir si una conexión es o no maliciosa, teniendo en cuenta los datos técnicos de las conexiones a la red, utilizando para ello, un conjunto de datos de 25 millones de registros y 19 columnas, sin llegar a la parte de producción/industrialización. 
 Metodología:
