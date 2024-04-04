@@ -61,7 +61,7 @@ Se probaron diferentes modelos de Machine Learning y Deep Learning para encontra
 	+3ª modelo de red neuronal secuencial. – Este modelo es similar a los anteriores, pero en este caso juego con capas “Relu” y “elu”, las cuales pueden llegar a ser mas eficientes evitando, lo que se conoce como “muerte neuronal” y mejorando con ciertos hiperparametros el optimizador Adam, para intentar mejorar el rendimiento del gradiente, previniendo las divisiones entre cero.
 ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/0f9a3161-0432-4000-b28c-d252963e120c)
 +Resultados:
-1ª modelo				2ªmodelo				3ªmodelo
+1ª modelo-----------------------------------2ªmodelo--------------------------------3ªmodelo
 ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/19187108-5499-4ea7-a6c4-ee316eb6b092)
 
    Como podemos observar los valores son muy similares, consiguiendo un modelo que generaliza muy bien, llegando a una precisión un 10% mas alta en la clase mayoritaria (98%) y el minoritaria (88%) sumado a un “recall” también alto de un 93% a la clase mayoritaria (Malicius) y un 97% en la clase minoritaria (Benign), es decir acierta en los valores declarados como positivos y en los identificados como positivos en cada clase en unas proporciones altas,  esperándose,  que estos resultados,  sean útiles para prevenir ataques de malware y proteger los sistemas informáticos.
