@@ -15,10 +15,10 @@ Finalmente se combinaron los conjuntos de datos limpios en un único conjunto de
 
 2. Exploración de datos:
 Se realizó un análisis exploratorio de datos para comprender las características del conjunto de datos, identificándose las variables relevantes para la predicción de ataques de malware, destacando:
- ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/18aac6f8-f059-4f7b-b24e-43232dd16d9c)
+![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/a8b020b4-4620-4173-a078-cc6fbffaf955)
 
 A.- El Target como se puede apreciar, esta dividida entre conexiones normales y maliciosas, pero con la finalidad de conseguir mejores resultados se sumaron el “Malicious” todos los tipos de este, quedando la Target (65% 35%), estando desbalanceada, por lo que se usaran hiperparametros y modelos adecuados para evitar un sobreajuste a la clase mayoritaria.
-![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/d4b1a891-a3fa-4525-b41d-94fa429fd4f1)
+![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/4be97ede-ad6c-4d76-b36b-a7142fa83e3b)
 
 B.- En el estudio correlacional entre variables y targets, se encontraron características interesantes:
 ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/fd73d525-335a-4cce-9ad6-c83b64573cfa)
