@@ -39,6 +39,8 @@ Puede ocurrir como respuesta a las mismas situaciones que generan un RSTO.
 RSTR: Similar a RSTS, pero indica que el paquete RST se envió en respuesta a un ataque SYN flood, consintiendo en enviar una gran cantidad de paquetes SYN falsos a un servidor con el objetivo de sobrecargarlo y denegar el servicio a usuarios legítimos (DoS)
 RSTRH: Similar a RSTR, pero indica que el paquete RST se recibió en respuesta a un ataque SYN flood.
 Conclusiones:
+![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/f56b9f87-b745-4aaf-9f0b-0ff44619a35f)
+
 -	Las que más conexiones maliciosas han tenido son OTH, RSTOSO Y RSTR las cuales están muy ligadas a actividades maliciosas como se ha explicado, pero en general hay bastantes conexiones maliciosas usando las diferentes categorías de la variable "conn_state", por lo que puede ser útil para identificar conexiones maliciosas, siendo las conexiones OTH, RSTS, RSTO y RSTR son las más propensas a ser "Malicious". En contra las mas propensas a conexiones “Benign” han sido: S1 y SH.
 -	Toda esta información se puede utilizar para desarrollar sistemas de detección de intrusiones (IDS), acompañado de un seguimiento de las variables OTH, RSTO y RSTR con la finalidad de identificar características concretas que se asocian a conexiones maliciosas.
   Como se puede observar, del estudio de correlación de Pearson, hay algunas variables que tienen una alta cardinalidad, además de valores similares, por lo que se tendrá en cuenta para proceder a eliminar la que sea menos interesante para este estudio.
