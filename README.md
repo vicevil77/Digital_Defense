@@ -21,7 +21,8 @@ A.- El Target como se puede apreciar, esta dividida entre conexiones normales y 
 ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/d4b1a891-a3fa-4525-b41d-94fa429fd4f1)
 
 B.- En el estudio correlacional entre variables y targets, se encontraron características interesantes:
-![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/4159fb30-5c82-4233-b097-0e6617373a0e)
+![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/fd73d525-335a-4cce-9ad6-c83b64573cfa)
+
 
 Como podemos observar, estamos analizando la variable “conn_state” con la” target”, siendo la primera una variable ayuda a entender cómo funcionan las comunicaciones de red y a rastrear el flujo de datos entre dispositivos, representando las diferentes fases por las que pasa una conexión TCP; siendo muy importante en el análisis de la red para detección de problemas y de actividad maliciosa.
 Algunos de los estados de conexión (“conn_state”) más usados son:
