@@ -22,9 +22,10 @@ A.- El Target como se puede apreciar, esta dividida entre conexiones normales y 
 
 B.- En el estudio correlacional entre variables y targets, se encontraron características interesantes:
 ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/0f363fc2-0e3e-4b9d-a362-4c4ff971409a)
+ Del estudio de correlación de Pearson, se observan ciertas variables que tienen una alta cardinalidad, además de valores similares, por lo que se tendrá en cuenta para proceder a eliminar las que sea menos interesante para este estudio.
+![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/8bdaf39e-d6b3-45c6-b143-8c68e041d9ee)
 
-
-Como podemos observar, estamos analizando la variable “conn_state” con la” target”, siendo la primera una variable ayuda a entender cómo funcionan las comunicaciones de red y a rastrear el flujo de datos entre dispositivos, representando las diferentes fases por las que pasa una conexión TCP; siendo muy importante en el análisis de la red para detección de problemas y de actividad maliciosa.
+Como podemos observar, analizando la variable “conn_state” con la” target”, siendo la primera una variable que ayuda a entender cómo funcionan las comunicaciones de red y a rastrear el flujo de datos entre dispositivos, representando las diferentes fases por las que pasa una conexión TCP; siendo muy importante en el análisis de la red para detección de problemas y de actividad maliciosa.
 Algunos de los estados de conexión (“conn_state”) más usados son:
 S1: Una conexión TCP establecida, permitiendo el intercambio de datos.
 SHR: Indica que un dispositivo (cliente) ha iniciado la conexión enviando un paquete SYN (sincronización) al servidor.
@@ -46,7 +47,6 @@ Conclusiones:
   Como se puede observar, del estudio de correlación de Pearson, hay algunas variables que tienen una alta cardinalidad, además de valores similares, por lo que se tendrá en cuenta para proceder a eliminar la que sea menos interesante para este estudio.
  C.- En ta grarfica podemos observar que de los tres puertos existentes en los datos (ICMP, TCP y UDO) el mas usado en conexiones maliciosas, superando a las conexiones normales es el TCP. Hay que decir que el protocolo ICMP, supeervisa si ha habido errores y tareas de control en las comunicaciones, no siendo un medio propiamente dicho un sistema de comunicacion, despues tenemos TCP que es la mas fiable y mas usada para comunicaciones en intenet, ya que es la qie se orienta a usar con internet y sus capas transposrtan datos,  siendo la mas vulnerable a los ataques y finalmente la UDP no es tan fiable como la anterior pero es menos vulnerable a los ataques, ya que trabaja con transeferrecia de datos de baja latencia, no teniendo muchos usarios.	
   D.- Aquí se observa la distribución de ataques por año y hora del día, observando que durante 2018 los ataques fueron mas equilibrados durante todo el año y en 2019 cambiaron la estrategia, y acumularon los ataques entre las 5 AM – 17 PM.
-![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/a79c73f7-fcd4-44ef-b652-0e3a4ccb28ed)
 
 3. Selección del modelo:
    
