@@ -52,11 +52,22 @@ Conclusiones:
 
 3. Selección del modelo:
    
-Se probaron diferentes modelos de Machine Learning y Deep Learning para encontrar el más adecuado para la tarea de predicción, resultando satisfactorio en Deep Learning, habiendo sido escalados con las técnicas de MinMaxScaler y LabelEncoder, realizándose una selección dl modelos basados en su precisión, eficiencia y capacidad de generalización, concretamente: RandomForest, LogisticRegression de ML y redes neuronales secuenciales con distintas configuraciones para DL.
+Se probaron diferentes modelos de Machine Learning y Deep Learning para encontrar el más adecuado para la tarea de predicción, resultando satisfactorio en Deep Learning, habiendo sido escalados con las técnicas de MinMaxScaler,LabelEncoder, hashing y estadarización, realizándose una selección dl modelos basados en su precisión, eficiencia y capacidad de generalización, concretamente: RandomForest, LogisticRegression de ML y redes neuronales secuenciales con distintas configuraciones para DL.
 5. Entrenamiento y evaluación del modelo:
-- Con los modelos Machine Learning no se consiguieron buenos resultados: En el RandonForest con la Target desbalanceada y en el LinearRegrassion realizándole un submuestreo al target, consiguiendo balacearla a costa de una pérdida del 30% de los datos, llegando al llegando al sobreajuste (overfitting).
-- Con los modelos de Deep Learning, se han trabajado con varias variaciones en las redes neuronales, para tratar de tener más datos para comparar, evaluándose el rendimiento del modelo utilizando un conjunto de datos de prueba posteriormente:
-	+1ª Red Neuronal secuencial. – Esta red esta formada por 1 capa de entrada densa con función de activación “Relu” y un regularizador tipo Lasso(L2), 3 capas ocultas densas, terminado con una capa de salida de 1 valor con la función de activación Sigmoide, dado el fin clasificador del proyecto, usando un “early_stopping” para evitar el sobreajuste, al que llegue con los modelos de ML.
+- A.- Con los modelos Machine Learning se ha conceguido buenos resultados:
+- En el RandonForest con desbalanceo de la Target hacia la clase mayoritaria(Malicious), se ha consiguido un recall medio de 0.74 y un f1-score de 0.85, auqnue en tenga que mejorar
+-![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/c54fe7c4-c831-4f40-9018-097bbd5d9f6a)
+- En el modelo de LogisticRegression consiguiendo un modelo mas equilibrado con una accuracy del 70% y un recall en ambas clases muy similar y una precision aceptable, por lo que estamos ante un buen modelo:
+- ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/eb4790e1-352a-402a-bce4-0573f7e922ae)
+- Se ha realizado un ressanpled de la clase minoritaria consiguiendo igualarar los valores de la target,a costa de una pérdida del 30% de los datos:
+- En el modelo LogisticRegrassion con submuestreo al target, se han conseguido resultados aun mejores que en los modelos anteriores, consiguiendo una precision media, un recall medio y una accuracy del 70%, encontrandonos ante un buen modelo capaz de clasificar con gran precision.
+- ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/0a785afc-5b44-440a-8631-decd5c89ffb2)
+- En el modelo RandomForest con submuestreo al target, resultados muy similares al logistic anterior, por lo que aqun con la perdida de informacion de un 30%, se ha ganado en eficacia en los modelos estudiados:
+- ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/d66caa0e-6ce8-4e5e-bbbd-6f76800adfcc)
+
+
+- B.- Con los modelos de Deep Learning, se han trabajado con varias variaciones en las redes neuronales, para tratar de tener más datos para comparar, evaluándose el rendimiento del modelo utilizando un conjunto de datos de prueba posteriormente:
+	+1ª Red Neuronal secuencial. – Esta red esta formada por 1 capa de entrada densa con función de activación “Relu” y un regularizador tipo Lasso(L2), 3 capas ocultas densas con un regularizador Lasso(2) en la segunda capa, siendo la 1º Relu y las dos ultimas densas "Elu", terminado con una capa de salida de 1 valor con la función de activación Sigmoid, dado el fin clasificador del proyecto, usando un “early_stopping” para evitar el sobreajuste, al que llegue con los modelos de M, reduce_lr , la cual reduce la tasa dea aprendizaje cuando el rendimiento de la validacion no mejora.
  ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/df49d954-35ab-48a9-b37f-17aad1454105)
 ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/2352cecd-4392-4e21-b277-d951a39ee887)
   +2ª modelo de Red Neuronal Secuencial. – Este modelo es igual que el anterior, excepto en el número de unidades de cada capa y la capa de salida que la hice con 2 unidades de salida y la función “softmax”.
