@@ -56,11 +56,13 @@ Se probaron diferentes modelos de Machine Learning y Deep Learning para encontra
 5. Entrenamiento y evaluación del modelo:
 - A.- Con los modelos Machine Learning se ha conceguido buenos resultados:
 - En el RandonForest con desbalanceo de la Target hacia la clase mayoritaria(Malicious), se ha consiguido un recall medio de 0.74 y un f1-score de 0.85, auqnue en tenga que mejorar
+- 
 -![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/c54fe7c4-c831-4f40-9018-097bbd5d9f6a)
 
 - En el modelo de LogisticRegression consiguiendo un modelo mas equilibrado con una accuracy del 70% y un recall en ambas clases muy similar y una precision aceptable, por lo que estamos ante un buen modelo:
 - 
 - ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/eb4790e1-352a-402a-bce4-0573f7e922ae)
+- 
 - Se ha realizado un ressanpled de la clase minoritaria consiguiendo igualarar los valores de la target,a costa de una pérdida del 30% de los datos:
 - En el modelo LogisticRegrassion con submuestreo al target, se han conseguido resultados aun mejores que en los modelos anteriores, consiguiendo una precision media, un recall medio y una accuracy del 70%, encontrandonos ante un buen modelo capaz de clasificar con gran precision.
 - ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/0a785afc-5b44-440a-8631-decd5c89ffb2)
