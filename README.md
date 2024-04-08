@@ -88,7 +88,7 @@ Se probaron diferentes modelos de Machine Learning y Deep Learning para encontra
   	+3º y 4º red neuronal secuencial balanceada con resempled:
 ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/7b3f7f64-2d0b-4e9d-a838-0c3c65927299)
 
--  Como podemos observar los valores son muy similares, consiguiendo un modelo  que tiene un buen desempeño en la clasificacion de la clase mayoritaria (Malicious), pero respecto a la clase 0 no tiene un unrendimiento mas bajo, aun abiendo hechos el resempled.
+-  Como podemos observar los valores son muy similares, consiguiendo un modelo  que tiene un buen desempeño en la clasificacion de la clase mayoritaria (Malicious), pero respecto a la clase 0 tiene renfimiento bajo, aun habiendo realizado el resempled.
 
 4. Reflexiones finales:
 
