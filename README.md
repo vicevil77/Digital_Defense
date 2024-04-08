@@ -1,19 +1,19 @@
   # Digital_Defense
-Proyecto de ML y DL sobre detección de ataques malware
+**Proyecto de ML y DL sobre detección de ataques malware**
 ![ml](https://github.com/vicevil77/Digital_Defense/assets/120662253/609c4974-5640-4ca6-b8df-eb1ad0b7f92c)
 
-Objetivo:
+OBJETIVO:
 
 El objetivo de este proyecto es desarrollar un modelo de Machine Learning/Deep Learning (ML/DL) para conseguir el mejor modelo para poder predecir si una conexión es o no maliciosa, teniendo en cuenta los datos técnicos de las conexiones a la red, utilizando para ello, un conjunto de datos de 25 millones de registros y 19 columnas, sin llegar a la parte de producción/industrialización. 
 
-Metodología:
+METODOLOGÍA:
 
-1. Recopilación y limpieza de datos:
+**1. Recopilación y limpieza de datos:**
 Se recopilaron 13 conjuntos de datos de fuentes públicas, realizándose una limpieza de datos para eliminar registros duplicados, inconsistentes o con valores nulos.
 Finalmente se combinaron los conjuntos de datos limpios en un único conjunto de datos con 25 millones de registros y 18 columnas.
  ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/cf002786-03b5-4a59-a6ad-4fda5060eee7)
 
-2. Exploración de datos:
+**2. Exploración de datos:**
 Se realizó un análisis exploratorio de datos para comprender las características del conjunto de datos, identificándose las variables relevantes para la predicción de ataques de malware, destacando:
 ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/a8b020b4-4620-4173-a078-cc6fbffaf955)
 
@@ -27,30 +27,30 @@ B.- En el estudio correlacional entre variables y targets, se encontraron caract
 
 Como podemos observar, analizando la variable “conn_state” con la” target”, siendo la primera una variable que ayuda a entender cómo funcionan las comunicaciones de red y a rastrear el flujo de datos entre dispositivos, representando las diferentes fases por las que pasa una conexión TCP; siendo muy importante en el análisis de la red para detección de problemas y de actividad maliciosa.
 Algunos de los estados de conexión (“conn_state”) más usados son:
-S1: Una conexión TCP establecida, permitiendo el intercambio de datos.
-SHR: Indica que un dispositivo (cliente) ha iniciado la conexión enviando un paquete SYN (sincronización) al servidor.
-SH: Señala que el servidor ha recibido el paquete SYN del cliente y ha respondido con un paquete al cliente. (SYN-ACK
-HS: Representa el inicio de una conexión TCP, siendo cuando dos hosts intercambian paquetes SYN y SYN-ACK, estableciendo los parámetros de la conexión.
-SF: Estado dónde una de las partes ha enviado un paquete FIN indicando el deseo de finalizar la conexión.
-RST (Reseteo): Indica que se desea un restablecimiento forzado de la conexión. Puede ocurrir por un problema, intento de acceso no permitido o en respuesta a un ataque.
-OTH: Todo lo que no esta definido en otras categorías (errores de protocolo, Ataques o intrusiones, etc.)
+- S1: Una conexión TCP establecida, permitiendo el intercambio de datos.
+-SHR: Indica que un dispositivo (cliente) ha iniciado la conexión enviando un 	paquete - SYN (sincronización) al servidor.
+- SH: Señala que el servidor ha recibido el paquete SYN del cliente y ha respondido con un paquete al cliente. (SYN-ACK
+- HS: Representa el inicio de una conexión TCP, siendo cuando dos hosts intercambian paquetes SYN y SYN-ACK, estableciendo los parámetros de la conexión.
+- SF: Estado dónde una de las partes ha enviado un paquete FIN indicando el deseo de finalizar la conexión.
+- RST (Reseteo): Indica que se desea un restablecimiento forzado de la conexión. Puede ocurrir por un problema, intento de acceso no permitido o en respuesta a un ataque.
+- **OTH**: Todo lo que no esta definido en otras categorías (errores de protocolo, Ataques o intrusiones, etc.)
 REJ (Rechazo): cuando el host rechaza el establecimiento de una conexión (el puerto falla, firewall, ataques DoS o DDoS, etc.)
 RSTO: cuando se envía a un Host un paquete RST (reseteo) para finalizar una conexión TCP de forma abrupta, y ocurren en caso similares a REJ.
-RSTOSO: indica que el host ha recibido un paquete RST de otro host, y esta ha finalizado.
+- **RSTOSO**: indica que el host ha recibido un paquete RST de otro host, y esta ha finalizado.
 Puede ocurrir como respuesta a las mismas situaciones que generan un RSTO.
-RSTR: Similar a RSTS, pero indica que el paquete RST se envió en respuesta a un ataque SYN flood, consintiendo en enviar una gran cantidad de paquetes SYN falsos a un servidor con el objetivo de sobrecargarlo y denegar el servicio a usuarios legítimos (DoS)
-RSTRH: Similar a RSTR, pero indica que el paquete RST se recibió en respuesta a un ataque SYN flood.
-Conclusiones:
+- **RSTR**: Similar a RSTO, pero indica que el paquete RST se envió en respuesta a un ataque SYN flood, consintiendo en enviar una gran cantidad de paquetes SYN falsos a un servidor con el objetivo de sobrecargarlo y denegar el servicio a usuarios legítimos (DoS)
+- RSTRH: Similar a RSTR, pero indica que el paquete RST se recibió en respuesta a un ataque SYN flood.
+	+Conclusiones:
 
 -	Las que más conexiones maliciosas han tenido son OTH, RSTOSO Y RSTR las cuales están muy ligadas a actividades maliciosas como se ha explicado, pero en general hay bastantes conexiones maliciosas usando las diferentes categorías de la variable "conn_state", por lo que puede ser útil para identificar conexiones maliciosas, siendo las conexiones OTH, RSTS, RSTO y RSTR son las más propensas a ser "Malicious". En contra las mas propensas a conexiones “Benign” han sido: S1 y SH.
 -	Toda esta información se puede utilizar para desarrollar sistemas de detección de intrusiones (IDS), acompañado de un seguimiento de las variables OTH, RSTO y RSTR con la finalidad de identificar características concretas que se asocian a conexiones maliciosas.
   Como se puede observar, del estudio de correlación de Pearson, hay algunas variables que tienen una alta cardinalidad, además de valores similares, por lo que se tendrá en cuenta para proceder a eliminar la que sea menos interesante para este estudio.
- C.- En ta grarfica podemos observar que de los tres puertos existentes en los datos (ICMP, TCP y UDO) el mas usado en conexiones maliciosas, superando a las conexiones normales es el TCP. Hay que decir que el protocolo ICMP, supeervisa si ha habido errores y tareas de control en las comunicaciones, no siendo un medio propiamente dicho un sistema de comunicacion, despues tenemos TCP que es la mas fiable y mas usada para comunicaciones en intenet, ya que es la qie se orienta a usar con internet y sus capas transposrtan datos,  siendo la mas vulnerable a los ataques y finalmente la UDP no es tan fiable como la anterior pero es menos vulnerable a los ataques, ya que trabaja con transeferrecia de datos de baja latencia, no teniendo muchos usarios.	
+ C.- En ta gráfica podemos observar que de los tres puertos existentes en los datos (ICMP, TCP y UDP) el mas usado en conexiones maliciosas, superando a las conexiones normales es el TCP. Hay que decir que el protocolo ICMP, supervisa si ha habido errores y tareas de control en las comunicaciones, no siendo un medio propiamente dicho un sistema de comunicacion, despues tenemos TCP que es la mas fiable y mas usada para comunicaciones en intenet, ya que es la qie se orienta a usar con internet y sus capas transposrtan datos,  siendo la mas vulnerable a los ataques y finalmente la UDP no es tan fiable como la anterior pero es menos vulnerable a los ataques, ya que trabaja con transferecia de datos de baja latencia, no teniendo muchos usarios.	
 
  D.- Aquí se observa la distribución de ataques por año y hora del día, observando que durante 2018 los ataques fueron mas equilibrados durante todo el año y en 2019 cambiaron la estrategia, y acumularon los ataques entre las 5 AM – 17 PM.
  ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/46084eb5-e558-4820-8dc4-7f3e37251353)
 
-3. Selección del modelo:
+**3. Selección del modelo:**
    
 Se probaron diferentes modelos de Machine Learning y Deep Learning para encontrar el más adecuado para la tarea de predicción, resultando satisfactorio en Deep Learning, habiendo sido escalados con las técnicas de MinMaxScaler,LabelEncoder, hashing y estadarización, realizándose una selección dl modelos basados en su precisión, eficiencia y capacidad de generalización, concretamente: RandomForest, LogisticRegression de ML y redes neuronales secuenciales con distintas configuraciones para DL.
 5. Entrenamiento y evaluación del modelo:
@@ -88,12 +88,12 @@ Se probaron diferentes modelos de Machine Learning y Deep Learning para encontra
   	+3º y 4º red neuronal secuencial balanceada con resempled:
 ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/7b3f7f64-2d0b-4e9d-a838-0c3c65927299)
 
--  Como podemos observar los valores son muy similares, consiguiendo un modelo  que tiene un buen desempeño en la clasificacion de la clase mayoritaria (Malicious), pero respecto a la clase 0 tiene renfimiento bajo, aun habiendo realizado el resempled.
+-  Como podemos observar los valores son muy similares, consiguiendo un modelo  que tiene un buen desempeño en la clasificacion de la clase mayoritaria (Malicious), pero respecto a la clase 0 tiene renfimiento bajo, aun habiendo realizado el resempled, aunque puede deberse a falta de entrenamiento del modelo que , por limitaciones tecnicas y tiempos de espera, solo he usado 10 epocas.
 
-4. Reflexiones finales:
+**REFLEXIONES FINALES**
 
 Este proyecto puede ayudar a mejorar la seguridad informática de las empresas y organizaciones, protegiendo a los usuarios de ataques de malware, mostrándose el Machine Learning/Deep Learning como procesos tecnológicos internos que abordan problemas reales de las personas en el mundo real.
-En general, los mejores modelos con mejores resultados han sido los de ML, habiendo conseguido un modelo muy bueno, esperándose, que estos resultados,  sean útiles para prevenir ataques de malware y proteger los sistemas informáticos.
+En general, los mejores modelos con mejores resultados han sido los de ML, habiendo conseguido un modelo muy bueno, siendo **el modelo RandonForest, ejecutado en multithearding al que se le aplico la tecnica del submuestreo de la clase minoritaria(Resampled)**, esperándose, que estos resultados,  sean útiles para prevenir ataques de malware y proteger los sistemas informáticos.
 Sería muy interesante para un futuro contactar con las diferentes empresas u organismos afectados para que nos aporten información nueva y actual, relacionándola con las diferentes categorías analizadas aquí, con la finalidad de conseguir que los modelos generativos den resultados aun más precisos.
 
 	
