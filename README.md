@@ -56,7 +56,7 @@ Puede ocurrir como respuesta a las mismas situaciones que generan un RSTO.
 Se probaron diferentes modelos de Machine Learning y Deep Learning para encontrar el más adecuado para la tarea de predicción, resultando satisfactorio en Deep Learning, habiendo sido escalados con las técnicas de MinMaxScaler,LabelEncoder, hashing y estadarización, realizándose una selección dl modelos basados en su precisión, eficiencia y capacidad de generalización, concretamente: RandomForest, LogisticRegression de ML y redes neuronales secuenciales con distintas configuraciones para DL.
 5. Entrenamiento y evaluación del modelo:
 - A.- Con los modelos Machine Learning se ha conceguido buenos resultados:
-- En el RandonForest con desbalanceo de la Target hacia la clase mayoritaria(Malicious), se ha consiguido un recall medio de 0.74 y un f1-score de 0.85, auqnue en tenga que mejorar
+- En el RandonForest con desbalanceo de la Target hacia la clase mayoritaria(Malicious), se ha consiguido un recall del 100%  y un f1-score de 0.74, siendo este modelo el que mejor acierta en detectar archivos maliciosos, aunque falle en detectar archivos buenos en un 25% de los casos. A esto hay que sumarle un accuracy del 81% y un casi 70% de AUC-ROC, dandole un toque de calidad al modelo.
 - 
 -![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/c54fe7c4-c831-4f40-9018-097bbd5d9f6a)
 
