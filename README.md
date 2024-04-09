@@ -56,19 +56,19 @@ Puede ocurrir como respuesta a las mismas situaciones que generan un RSTO.
 Se probaron diferentes modelos de Machine Learning y Deep Learning para encontrar el más adecuado para la tarea de predicción, resultando satisfactorio en Deep Learning, habiendo sido escalados con las técnicas de MinMaxScaler,LabelEncoder, hashing y estadarización, realizándose una selección dl modelos basados en su precisión, eficiencia y capacidad de generalización, concretamente: RandomForest, LogisticRegression de ML y redes neuronales secuenciales con distintas configuraciones para DL.
 5. Entrenamiento y evaluación del modelo:
 - A.- Con los modelos Machine Learning se ha conceguido buenos resultados:
-- En el RandonForest con desbalanceo de la Target hacia la clase mayoritaria(Malicious), se ha consiguido un recall del 100%  y un f1-score de 0.74, siendo este modelo el que mejor acierta en detectar archivos maliciosos, aunque falle en detectar archivos buenos en un 25% de los casos. A esto hay que sumarle un accuracy del 81% y un casi 70% de AUC-ROC, dandole un toque de calidad al modelo.
+- En el RandonForest con desbalanceo de la Target hacia la clase mayoritaria(Malicious), se ha consiguido un recall del 100% con un casi 60% de precision y un f1-score de 0.74, siendo este modelo el que **mejor acierta en detectar archivos maliciosos**, aunque falle en detectar archivos buenos en un 25% de los casos. A esto hay que sumarle un accuracy del 81% y un casi 70% de AUC-ROC, dandole un toque de calidad al modelo.
 - 
 -![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/c54fe7c4-c831-4f40-9018-097bbd5d9f6a)
 
-- En el modelo de LogisticRegression consiguiendo un modelo mas equilibrado con una accuracy del 70% y un recall en ambas clases muy similar y una precision aceptable, por lo que estamos ante un buen modelo:
+- En el modelo de LogisticRegression consiguiendo un modelo mas equilibrado con una accuracy del 70% y un recall en ambas clases muy similar y una precision aceptable, por lo que estamos ante un buen modelo, pero no para lo que busca el obtivo de negocio de este proyecto:
 - 
 - ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/eb4790e1-352a-402a-bce4-0573f7e922ae)
 - 
-- Se ha realizado un ressanpled de la clase minoritaria consiguiendo igualarar los valores de la target,a costa de una pérdida del 30% de los datos:
-- En el modelo LogisticRegrassion con submuestreo al target, se han conseguido resultados aun mejores que en los modelos anteriores, consiguiendo una precision media, un recall medio y una accuracy del 70%, encontrandonos ante un buen modelo capaz de clasificar con gran precision.
+- Se ha realizado un resampling de la clase minoritaria consiguiendo igualar los valores de la target,a costa de una pérdida del 30% de los datos:
+- En el modelo LogisticRegrassion con submuestreo al target, se han conseguido resultados buenos resultados, consiguiendo una precision media, un recall medio y una accuracy del 70%, encontrandonos ante un buen modelo capaz de clasificar con gran precision ambas archivos pero con perdidas en aciertos de un 30% para cada una de las clases, por lo que el modelo anteriormente nombrado sigue siendo el favorito.
 - ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/0a785afc-5b44-440a-8631-decd5c89ffb2)
 - 
-- En el modelo RandomForest con submuestreo al target, resultados muy similares al logistic anterior, por lo que aqun con la perdida de informacion de un 30%, se ha ganado en eficacia en los modelos estudiados:
+- En el modelo RandomForest con submuestreo al target, resultados muy similares al logistic anterior, por lo que aqun con la perdida de informacion de un 30%, se han mantenido buenos resultados.
 - 
 - ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/d66caa0e-6ce8-4e5e-bbbd-6f76800adfcc)
 
