@@ -93,7 +93,7 @@ Se probaron diferentes modelos de Machine Learning y Deep Learning para encontra
 **REFLEXIONES FINALES**
 
 Este proyecto puede ayudar a mejorar la seguridad informática de las empresas y organizaciones, protegiendo a los usuarios de ataques de malware, mostrándose el Machine Learning/Deep Learning como procesos tecnológicos internos que abordan problemas reales de las personas en el mundo real.
-En general, los mejores modelos con mejores resultados han sido los de ML, habiendo conseguido un modelo muy bueno, siendo **el modelo RandonForest, ejecutado en multithearding al que se le aplico la tecnica del submuestreo de la clase minoritaria(Resampled)**, esperándose, que estos resultados,  sean útiles para prevenir ataques de malware y proteger los sistemas informáticos.
+En general, los mejores modelos con mejores resultados han sido los de ML, habiendo conseguido **un modelo muy bueno el cual es capaz de diferenciar con 100% de posibilidad el 60 % de los arvhivos maliciosos, con una accuracy del 81% y un casi 70% de AUC-ROC, lo que le da un aumemnto a la fabilidad del modelo, siendo un RandonForest, ejecutado en multithearding**, esperando, que estos resultados,  sean útiles para prevenir ataques de malware y proteger los sistemas informáticos.
 Sería muy interesante para un futuro contactar con las diferentes empresas u organismos afectados para que nos aporten información nueva y actual, relacionándola con las diferentes categorías analizadas aquí, con la finalidad de conseguir que los modelos generativos den resultados aun más precisos.
 
 	
