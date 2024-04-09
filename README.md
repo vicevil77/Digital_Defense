@@ -47,27 +47,28 @@ Puede ocurrir como respuesta a las mismas situaciones que generan un RSTO.
   Como se puede observar, del estudio de correlación de Pearson, hay algunas variables que tienen una alta cardinalidad, además de valores similares, por lo que se tendrá en cuenta para proceder a eliminar la que sea menos interesante para este estudio.
  C.- En ta gráfica podemos observar que de los tres puertos existentes en los datos (ICMP, TCP y UDP) el mas usado en conexiones maliciosas, superando a las conexiones normales es el TCP. Hay que decir que el protocolo ICMP, supervisa si ha habido errores y tareas de control en las comunicaciones, no siendo un medio propiamente dicho un sistema de comunicacion, despues tenemos TCP que es la mas fiable y mas usada para comunicaciones en intenet, ya que es la qie se orienta a usar con internet y sus capas transposrtan datos,  siendo la mas vulnerable a los ataques y finalmente la UDP no es tan fiable como la anterior pero es menos vulnerable a los ataques, ya que trabaja con transferecia de datos de baja latencia, no teniendo muchos usarios.	
 
- D.- Aquí se observa la distribución de ataques por año y hora del día, observando que durante 2018 los ataques fueron mas equilibrados durante todo el año y en 2019 cambiaron la estrategia, y acumularon los ataques entre las 5 AM – 17 PM.
- ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/46084eb5-e558-4820-8dc4-7f3e37251353)
+ D.- Aquí se observa la distribución de ataques por año, dia semanal y hora del día, observando que los dias de mayores ataques son martes, mierrcoles y juevesen hoararios mas activos de 18:00 a las 07:00 horas, con datos del 2018 y 2019.
+![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/fd0d0d92-5fe1-4033-9623-b199c33f2aa3)
+
 
 **3. Selección del modelo:**
    
 Se probaron diferentes modelos de Machine Learning y Deep Learning para encontrar el más adecuado para la tarea de predicción, resultando satisfactorio en Deep Learning, habiendo sido escalados con las técnicas de MinMaxScaler,LabelEncoder, hashing y estadarización, realizándose una selección dl modelos basados en su precisión, eficiencia y capacidad de generalización, concretamente: RandomForest, LogisticRegression de ML y redes neuronales secuenciales con distintas configuraciones para DL.
 5. Entrenamiento y evaluación del modelo:
 - A.- Con los modelos Machine Learning se ha conceguido buenos resultados:
-- En el RandonForest con desbalanceo de la Target hacia la clase mayoritaria(Malicious), se ha consiguido un recall medio de 0.74 y un f1-score de 0.85, auqnue en tenga que mejorar
+- En el RandonForest con desbalanceo de la Target hacia la clase mayoritaria(Malicious), se ha consiguido un recall del 100% con un casi 60% de precision y un f1-score de 0.74, siendo este modelo el que **mejor acierta en detectar archivos maliciosos**, aunque falle en detectar archivos buenos en un 25% de los casos. A esto hay que sumarle un accuracy del 81% y un casi 70% de AUC-ROC, dandole un toque de calidad al modelo.
 - 
 -![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/c54fe7c4-c831-4f40-9018-097bbd5d9f6a)
 
-- En el modelo de LogisticRegression consiguiendo un modelo mas equilibrado con una accuracy del 70% y un recall en ambas clases muy similar y una precision aceptable, por lo que estamos ante un buen modelo:
+- En el modelo de LogisticRegression consiguiendo un modelo mas equilibrado con una accuracy del 70% y un recall en ambas clases muy similar y una precision aceptable, por lo que estamos ante un buen modelo, pero no para lo que busca el obtivo de negocio de este proyecto:
 - 
 - ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/eb4790e1-352a-402a-bce4-0573f7e922ae)
 - 
-- Se ha realizado un ressanpled de la clase minoritaria consiguiendo igualarar los valores de la target,a costa de una pérdida del 30% de los datos:
-- En el modelo LogisticRegrassion con submuestreo al target, se han conseguido resultados aun mejores que en los modelos anteriores, consiguiendo una precision media, un recall medio y una accuracy del 70%, encontrandonos ante un buen modelo capaz de clasificar con gran precision.
+- Se ha realizado un resampling de la clase minoritaria consiguiendo igualar los valores de la target,a costa de una pérdida del 30% de los datos:
+- En el modelo LogisticRegrassion con submuestreo al target, se han conseguido resultados buenos resultados, consiguiendo una precision media, un recall medio y una accuracy del 70%, encontrandonos ante un buen modelo capaz de clasificar con gran precision ambas archivos pero con perdidas en aciertos de un 30% para cada una de las clases, por lo que el modelo anteriormente nombrado sigue siendo el favorito.
 - ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/0a785afc-5b44-440a-8631-decd5c89ffb2)
 - 
-- En el modelo RandomForest con submuestreo al target, resultados muy similares al logistic anterior, por lo que aqun con la perdida de informacion de un 30%, se ha ganado en eficacia en los modelos estudiados:
+- En el modelo RandomForest con submuestreo al target, resultados muy similares al logistic anterior, por lo que aqun con la perdida de informacion de un 30%, se han mantenido buenos resultados.
 - 
 - ![image](https://github.com/vicevil77/Digital_Defense/assets/120662253/d66caa0e-6ce8-4e5e-bbbd-6f76800adfcc)
 
